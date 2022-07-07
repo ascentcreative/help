@@ -13,7 +13,7 @@ class HelpServiceProvider extends ServiceProvider
     //
 
     // Register the helpers php file which includes convenience functions:
-    require_once (__DIR__.'/helpers.php');
+    // require_once (__DIR__.'/helpers.php');
    
     $this->mergeConfigFrom(
         __DIR__.'/../config/help.php', 'help'

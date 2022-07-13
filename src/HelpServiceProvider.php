@@ -30,13 +30,17 @@ class HelpServiceProvider extends ServiceProvider
 
     $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-    
+    $this->bootComponents();
+
+
   }
 
   
 
   // register the components
   public function bootComponents() {
+
+        Blade::component('help-link', \AscentCreative\Help\Components\HelpLink::class);
 
   }
 

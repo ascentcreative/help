@@ -13,9 +13,13 @@ class CreateHelpTables extends Migration
      */
     public function up()
     {
-        Schema::create('help_texts', function (Blueprint $table) {
+        Schema::dropIfExists('help_texts');
+
+        Schema::create('fieldhelp', function (Blueprint $table) {
             $table->id();
-            $table->string('key')->index();
+            $table->string('path')->index();
+            $table->string('helpkey')->index();
+            $table->string('title')->index()->nullable();
             $table->text('text')->nullable();
             $table->timestamps();
         });
@@ -28,6 +32,6 @@ class CreateHelpTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('help_texts');
+        Schema::dropIfExists('fieldhelp');
     }
 }

@@ -20,7 +20,7 @@ Route::middleware('web')->group( function() {
 
 Route::prefix('admin')->middleware(['auth', 'can:administer'])->group(function() {
 
-    Route::resource('fieldhelp', \AscentCreative\Help\Controllers\Admin\FieldHelpController::class, ['as'=>'admin']);
+  //  Route::resource('fieldhelp', \AscentCreative\Help\Controllers\Admin\FieldHelpController::class, ['as'=>'admin']);
 
 });
 
